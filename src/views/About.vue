@@ -1,5 +1,25 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <button @click="showWindowAdd">Add</button>
   </div>
 </template>
+
+<script>
+  import {ipcRenderer} from "electron"
+
+  export default {
+    name: 'about',
+
+    data(){
+      return {
+
+      }
+    },
+
+    methods: {
+      showWindowAdd(){
+        ipcRenderer.send('openAddWindow')
+      }
+    }
+  }
+</script>
